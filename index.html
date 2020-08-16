@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <title>照片墙</title>
+    <link href="./index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="app">
+        <section>
+            <div class="z-card">
+                <div 
+                    draggable="true"
+                    class="z-card-item z-card-item_animation"
+                    :class="item.isComplete ? 'z-card-item_noImage' : ''"
+                    v-for="item in dataSource"
+                    :key="item.key"
+                    :style="item.style"
+
+                    @mousemove="handleMousemove"
+
+                    @touchstart="handleTouchstart"
+                    @touchend="handleTouchend(event, item.key)"
+
+                    @dragstart="onDragstart"
+                    @dragend="onDragend(event, item.key)"
+                >
+                    <img 
+                        draggable="false" 
+                        class="z-card-item_img" 
+                        v-show="item.isComplete"
+                        :src="item.img"
+                        @load="handLoadImage(event, item)"
+                    />
+                </div>
+            </div>
+        </section>
+        <audio src="./static/music/后来遇见他.mp3" controls="controls" />
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="js/imgUrl.js"></script>
+<script src="./js/index.js"></script>
+</html>

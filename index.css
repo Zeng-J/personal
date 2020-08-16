@@ -1,0 +1,67 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.z-card {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #fbc2eb, #a6c1ee, transparent);
+}
+.z-card-item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+
+    min-height: 80px;
+    background-repeat: no-repeat;
+    background-image: url(./public/images/img.png);
+
+    transition: all 1s;
+}
+.z-card-item_noImage {
+    background: transparent;
+}   
+.z-card-item_img {
+    width: 100%;
+    box-shadow: 1px 1px 6px #888;
+}
+.z-card-item:hover {
+    transform: scale(1.5) !important;
+    z-index: 1;
+}
+.z-card-item_animation {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+
+    -webkit-animation-name: flipInY;
+    animation-name: flipInY;
+
+}
+@keyframes flipInY {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .z-card-item {
+        width: 80px;
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .z-card-item {
+        width: 100px;
+    }
+}
