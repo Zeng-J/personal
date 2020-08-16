@@ -3,6 +3,14 @@ html, body {
     margin: 0;
 }
 
+.z-audio {
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    bottom: 10px;
+    width: 300px;
+}
+
 .z-card {
     position: fixed;
     width: 100%;

@@ -1,3 +1,8 @@
+// 让页面禁止下拉
+document.querySelector('body').addEventListener('touchmove', function(e) {
+    e.preventDefault();
+}, { passive: false })
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -6,6 +11,8 @@ var app = new Vue({
             img: './static/images/'+i,
         })),
         initalAxis: {},
+        audioSrc: AUDIO_URL[0],
+        audioSrcIndex: 0,
     },
     mounted() {
         setTimeout(() => {
@@ -117,6 +124,16 @@ var app = new Vue({
             findObj.isComplete = true;
 
             this.dataSource = list;
+        },
+
+        handleAudioEnd() {
+            // 循环播放
+            if (this.audioSrcIndex >= AUDIO_URL.length) {
+                this.audioSrcIndex = 0;
+            } else {
+                this.audioSrcIndex++;
+            }
+            this.audioSrc = AUDIO_URL[this.audioSrcIndex];
         }
     },
 })

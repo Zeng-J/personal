@@ -45,3 +45,8 @@ const IMG_URL = [
     'mmexport1554128332960.png',
     'mmexport1554128425084.png'
 ];
+
+const AUDIO_URL = [
+    "http://www.170mv.com/kw/antiserver.kuwo.cn/anti.s?rid=MUSIC_147563607&response=res&format=mp3|aac&type=convert_url&br=128kmp3&agent=iPhone&callback=getlink&jpcallback=getlink.mp3",
+    "http://www.170mv.com/kw/antiserver.kuwo.cn/anti.s?rid=MUSIC_147206681&response=res&format=mp3|aac&type=convert_url&br=128kmp3&agent=iPhone&callback=getlink&jpcallback=getlink.mp3"
+];

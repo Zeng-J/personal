@@ -38,10 +38,16 @@
                 </div>
             </div>
         </section>
-        <audio src="./static/music/后来遇见他.mp3" controls="controls" />
+        <audio 
+            class="z-audio" 
+            controls="controls"
+            autoplay="autoplay"
+            :src="audioSrc"
+            @ended="handleAudioEnd"
+        />
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-<script src="js/imgUrl.js"></script>
+<script src="js/constant.js"></script>
 <script src="./js/index.js"></script>
 </html>
