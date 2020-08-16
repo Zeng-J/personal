@@ -69,10 +69,9 @@ var app = new Vue({
                 let xDeg = Math.floor((item.x + 100 - currentX)/window.innerWidth*90),
                     yDeg = Math.floor((item.y + 100 - currentY)/window.innerHeight*90);
 
-                item.style = {
-                    ...item.style,
+                Object.assign(item.style, {
                     transform: `rotateX(${yDeg}deg) rotateY(${xDeg}deg)`,
-                };
+                })
                 return item;
             })
         },
